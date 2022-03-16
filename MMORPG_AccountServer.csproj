@@ -111,7 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Logs\Console\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

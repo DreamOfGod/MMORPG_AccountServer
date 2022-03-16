@@ -1,10 +1,7 @@
 ﻿using MMORPG_AccountServer.Entity;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 
 namespace MMORPG_AccountServer.DBModel
 {
@@ -13,6 +10,7 @@ namespace MMORPG_AccountServer.DBModel
         #region 单例
         private static object lock_object = new object();
         private static AccountDBModel instance;
+        private AccountDBModel() { }
 
         public static AccountDBModel Instance
         {
@@ -20,6 +18,7 @@ namespace MMORPG_AccountServer.DBModel
             {
                 if(instance == null)
                 {
+                    //加锁，防止重复实例化
                     lock(lock_object)
                     {
                         if(instance == null)
@@ -33,7 +32,7 @@ namespace MMORPG_AccountServer.DBModel
         }
         #endregion
 
-        private const string connStr = "server=127.0.0.1;port=3306;user=root;password=123456; database=MMORPG_Account;";
+        private const string connStr = "server=127.0.0.1; port=3306; user=root; password=123456; database=MMORPG_Account;";
 
         public AccountEntity Get(int id)
         {

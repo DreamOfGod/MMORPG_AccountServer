@@ -1,8 +1,8 @@
-CREATE DATABASE MMORPG_Account;
+CREATE DATABASE MMORPG_Account; #创建数据库
 
-USE MMORPG_Account;
+USE MMORPG_Account; #使用数据库
 
-#账户表
+#创建账户表
 CREATE TABLE Account (
 	Id INT PRIMARY KEY AUTO_INCREMENT,
 	Username VARCHAR(50), #用户名
@@ -14,17 +14,19 @@ CREATE TABLE Account (
 	UpdateTime DATETIME #更新时间
 );
 
+#插入账户表
 INSERT INTO Account
 (Username, Pwd, YuanBao, CreateTime)
 values
 ('test', 123, 10, Now());
 
-DELIMITER $$
+#创建存储过程Account_Get
+DELIMITER $$ #暂时将结束符分号;改为$$，以便存储过程中的;不会被认为是结束符
 CREATE PROCEDURE Account_Get (IN id INT)
 BEGIN
 	SELECT * FROM Account WHERE Id = id;
 END$$
-DELIMITER ;
+DELIMITER ; #恢复结束符为分号;
 
 SHOW PROCEDURES STATUS; #查看所有存储过程
 SHOW CREATE PROCEDURE PROC_NAME; #查看存储过程代码
