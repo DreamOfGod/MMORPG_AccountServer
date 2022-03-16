@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LitJson;
+using MMORPG_AccountServer.DBModel;
+using MMORPG_AccountServer.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -16,14 +19,15 @@ namespace MMORPG_AccountServer.Controllers.api
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public AccountEntity Get(int id)
         {
-            return "value" + id;
+            return AccountDBModel.Instance.Get(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody] string value)
+        public string Post([FromBody] string value)
         {
+            return value + " post resp";
         }
 
         // PUT api/<controller>/5

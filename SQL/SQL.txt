@@ -1,0 +1,30 @@
+CREATE DATABASE MMORPG_Account;
+
+USE MMORPG_Account;
+
+#账户表
+CREATE TABLE Account (
+	Id INT PRIMARY KEY AUTO_INCREMENT,
+	Username VARCHAR(50), #用户名
+	Pwd VARCHAR(50), #密码
+	YuanBao INT NOT NULL, #元宝
+	LastServerId INT, #上次登陆的区号
+	LastServerName VARCHAR(50), #上次登陆的区服
+	CreateTime DATETIME, #创建时间
+	UpdateTime DATETIME #更新时间
+);
+
+INSERT INTO Account
+(Username, Pwd, YuanBao, CreateTime)
+values
+('test', 123, 10, Now());
+
+DELIMITER $$
+CREATE PROCEDURE Account_Get (IN id INT)
+BEGIN
+	SELECT * FROM Account WHERE Id = id;
+END$$
+DELIMITER ;
+
+SHOW PROCEDURES STATUS; #查看所有存储过程
+SHOW CREATE PROCEDURE PROC_NAME; #查看存储过程代码
