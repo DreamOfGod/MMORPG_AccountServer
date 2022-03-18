@@ -17,7 +17,7 @@ CREATE TABLE Account (
 #插入账户表
 INSERT INTO Account
 (Username, Pwd, YuanBao, CreateTime)
-values
+VALUES
 ('test', 123, 10, Now());
 
 #创建存储过程Account_Get
@@ -30,3 +30,18 @@ DELIMITER ; #恢复结束符为分号;
 
 SHOW PROCEDURES STATUS; #查看所有存储过程
 SHOW CREATE PROCEDURE PROC_NAME; #查看存储过程代码
+
+#注册存储过程
+DELIMITER $$
+CREATE PROCEDURE Account_Register(IN username VARCHAR(50), IN pwd VARCHAR(50))
+BEGIN
+	INSERT INTO Account
+		(Username, Pwd, YuanBao, LastServerId, LastServerName)
+	VALUES
+		(username, pwd, 0, 0, '');
+
+	SELECT @@IDENTITY; #查询插入的记录的自增列的值
+END$$
+DELIMITER ;
+
+CALL PROC_NAME(); #调用存储过程

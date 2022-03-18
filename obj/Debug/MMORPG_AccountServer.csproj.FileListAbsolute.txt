@@ -163,3 +163,4 @@ E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.CopyComplete
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.pdb
+D:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache
