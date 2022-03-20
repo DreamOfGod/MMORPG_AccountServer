@@ -80,6 +80,7 @@ D:\Code\UnityProjects\MMORPG_AccountServer\bin\K4os.Hash.xxHash.dll
 D:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Numerics.Vectors.dll
 D:\Code\UnityProjects\MMORPG_AccountServer\bin\MySql.Data.xml
 D:\Code\UnityProjects\MMORPG_AccountServer\bin\LitJson.dll
+D:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\MMORPG_AccountServer.dll.config
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\MMORPG_AccountServer.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\MMORPG_AccountServer.pdb
@@ -158,9 +159,7 @@ E:\Code\UnityProjects\MMORPG_AccountServer\bin\Microsoft.CodeDom.Providers.DotNe
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\zh-Hans\System.Web.Http.resources.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.CoreCompileInputs.cache
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.CopyComplete
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.pdb
-D:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache

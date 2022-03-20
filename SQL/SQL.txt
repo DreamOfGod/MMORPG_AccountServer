@@ -36,11 +36,11 @@ DELIMITER $$
 CREATE PROCEDURE Account_Register(IN username VARCHAR(50), IN pwd VARCHAR(50))
 BEGIN
 	INSERT INTO Account
-		(Username, Pwd, YuanBao, LastServerId, LastServerName)
+		(Username, Pwd, YuanBao, LastServerId, LastServerName, CreateTime)
 	VALUES
-		(username, pwd, 0, 0, '');
+		(username, pwd, 0, 0, '', now());
 
-	SELECT @@IDENTITY; #查询插入的记录的自增列的值
+	SELECT @@IDENTITY;
 END$$
 DELIMITER ;
 

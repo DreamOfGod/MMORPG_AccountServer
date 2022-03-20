@@ -32,12 +32,17 @@ namespace MMORPG_AccountServer.DBModel
         }
         #endregion
 
-        private const string connStr = "server=127.0.0.1; port=3306; user=root; password=123456; database=MMORPG_Account;";
+        private const string CONN_STR = "server=127.0.0.1; port=3306; user=root; password=123456; database=MMORPG_Account;";
 
+        /// <summary>
+        /// 根据id查询
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AccountEntity Get(int id)
         {
             //建立连接
-            using (MySqlConnection conn = new MySqlConnection(connStr))
+            using (MySqlConnection conn = new MySqlConnection(CONN_STR))
             {
                 //打开连接
                 conn.Open();
@@ -72,6 +77,39 @@ namespace MMORPG_AccountServer.DBModel
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="account"></param>
+        /// <returns></returns>
+        public int Register(AccountEntity account)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(CONN_STR))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand("Account_Register", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new MySqlParameter("username", account.Username));
+                    cmd.Parameters.Add(new MySqlParameter("pwd", account.Pwd));
+                    object result = cmd.ExecuteScalar();
+                    if(result == null)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return Convert.ToInt32(result.ToString());
+                    }
+                }
+            }
+            catch
+            {
+                return -1;
+            }
         }
     }
 }
