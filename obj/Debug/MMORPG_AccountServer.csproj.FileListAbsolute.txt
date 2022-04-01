@@ -135,22 +135,10 @@ E:\Code\UnityProjects\MMORPG_AccountServer\bin\roslyn\VBCSCompiler.exe
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\roslyn\VBCSCompiler.exe.config
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\LitJson.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\MySql.Data.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\Newtonsoft.Json.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Net.Http.Formatting.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Web.Http.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Web.Http.WebHost.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\Google.Protobuf.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\ZstdNet.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\K4os.Compression.LZ4.Streams.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\BouncyCastle.Crypto.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\Ubiety.Dns.Core.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Memory.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Buffers.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\K4os.Compression.LZ4.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\K4os.Hash.xxHash.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Numerics.Vectors.dll
-E:\Code\UnityProjects\MMORPG_AccountServer\bin\MySql.Data.xml
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\Newtonsoft.Json.xml
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Net.Http.Formatting.xml
 E:\Code\UnityProjects\MMORPG_AccountServer\bin\System.Web.Http.xml
@@ -163,3 +151,4 @@ E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.CopyComplete
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.pdb
+E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache

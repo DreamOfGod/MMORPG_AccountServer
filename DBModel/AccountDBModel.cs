@@ -1,7 +1,7 @@
 ﻿using MMORPG_AccountServer.Entity;
-using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace MMORPG_AccountServer.DBModel
 {
@@ -32,7 +32,7 @@ namespace MMORPG_AccountServer.DBModel
         }
         #endregion
 
-        private const string CONN_STR = "server=127.0.0.1; port=3306; user=root; password=123456; database=MMORPG_Account;";
+        private const string CONN_STR = "Data Source=.;Initial Catalog=MMORPG_Account;Integrated Security=True";
 
         /// <summary>
         /// 根据id查询
@@ -42,18 +42,18 @@ namespace MMORPG_AccountServer.DBModel
         public AccountEntity Get(int id)
         {
             //建立连接
-            using (MySqlConnection conn = new MySqlConnection(CONN_STR))
+            using (SqlConnection conn = new SqlConnection(CONN_STR))
             {
                 //打开连接
                 conn.Open();
 
                 //建立执行对象
-                MySqlCommand cmd = new MySqlCommand("Account_Get", conn);
+                SqlCommand cmd = new SqlCommand("Account_Get", conn);
 
                 //使用存储过程
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new MySqlParameter("id", id));
-                using (MySqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
+                cmd.Parameters.Add(new SqlParameter("@Id", id));
+                using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection))
                 {
                     if(reader.HasRows)
                     {
@@ -88,13 +88,13 @@ namespace MMORPG_AccountServer.DBModel
         {
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(CONN_STR))
+                using (SqlConnection conn = new SqlConnection(CONN_STR))
                 {
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand("Account_Register", conn);
+                    SqlCommand cmd = new SqlCommand("Account_Register", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new MySqlParameter("username", account.Username));
-                    cmd.Parameters.Add(new MySqlParameter("pwd", account.Pwd));
+                    cmd.Parameters.Add(new SqlParameter("@Username", account.Username));
+                    cmd.Parameters.Add(new SqlParameter("@Pwd", account.Pwd));
                     object result = cmd.ExecuteScalar();
                     if(result == null)
                     {
