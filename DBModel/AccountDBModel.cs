@@ -106,7 +106,7 @@ namespace MMORPG_AccountServer.DBModel
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return -1;
             }
