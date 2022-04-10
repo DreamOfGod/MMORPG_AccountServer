@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMORPG_AccountServer", "MMORPG_AccountServer.csproj", "{4CC5334B-B2F7-4AA6-8AF2-69E23494ACE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mmcoy.Framework", "..\MMORPG_Unity\DevelopmentUtility\youyou_Framework\Mmcoy.Framework\Mmcoy.Framework.csproj", "{E6ECD27A-00EA-48DA-A110-F315F26CC524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4CC5334B-B2F7-4AA6-8AF2-69E23494ACE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CC5334B-B2F7-4AA6-8AF2-69E23494ACE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CC5334B-B2F7-4AA6-8AF2-69E23494ACE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6ECD27A-00EA-48DA-A110-F315F26CC524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6ECD27A-00EA-48DA-A110-F315F26CC524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6ECD27A-00EA-48DA-A110-F315F26CC524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6ECD27A-00EA-48DA-A110-F315F26CC524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

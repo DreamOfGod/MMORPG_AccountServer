@@ -90,10 +90,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\api\AccountController.cs" />
+    <Compile Include="CacheModel\AccountCacheModelExt.cs" />
+    <Compile Include="CacheModel\Generate\AccountCacheModel.cs" />
+    <Compile Include="CacheModel\Generate\GameServerCacheModel.cs" />
+    <Compile Include="ControllerHelp.cs" />
+    <Compile Include="Controllers\api\LogonController.cs" />
     <Compile Include="Controllers\api\RegisterController.cs" />
-    <Compile Include="DBModel\AccountDBModel.cs" />
-    <Compile Include="Entity\AccountEntity.cs" />
+    <Compile Include="Controllers\api\TimeController.cs" />
+    <Compile Include="DBConn.cs" />
+    <Compile Include="DBModel\AccountDBModelExt.cs" />
+    <Compile Include="DBModel\Generate\AccountDBModel.cs" />
+    <Compile Include="DBModel\Generate\GameServerDBModel.cs" />
+    <Compile Include="Entity\Generate\AccountEntity.cs" />
+    <Compile Include="Entity\Generate\GameServerEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -115,7 +124,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMORPG_Unity\DevelopmentUtility\youyou_Framework\Mmcoy.Framework\Mmcoy.Framework.csproj">
+      <Project>{e6ecd27a-00ea-48da-a110-f315f26cc524}</Project>
+      <Name>Mmcoy.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

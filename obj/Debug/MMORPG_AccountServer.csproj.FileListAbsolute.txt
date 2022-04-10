@@ -139,4 +139,8 @@ E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.CopyComplete
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.dll
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.pdb
+E:\Code\UnityProjects\MMORPG_AccountServer\bin\Mmcoy.Framework.dll
+E:\Code\UnityProjects\MMORPG_AccountServer\bin\log4net.dll
+E:\Code\UnityProjects\MMORPG_AccountServer\bin\HtmlSanitizationLibrary.dll
+E:\Code\UnityProjects\MMORPG_AccountServer\bin\Mmcoy.Framework.pdb
 E:\Code\UnityProjects\MMORPG_AccountServer\obj\Debug\MMORPG_AccountServer.csproj.AssemblyReference.cache
