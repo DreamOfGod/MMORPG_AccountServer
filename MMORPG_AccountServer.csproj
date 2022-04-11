@@ -91,18 +91,23 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CacheModel\AccountCacheModelExt.cs" />
+    <Compile Include="CacheModel\GameServerCacheModelExt.cs" />
     <Compile Include="CacheModel\Generate\AccountCacheModel.cs" />
     <Compile Include="CacheModel\Generate\GameServerCacheModel.cs" />
     <Compile Include="ControllerHelp.cs" />
+    <Compile Include="Controllers\api\GameServerController.cs" />
     <Compile Include="Controllers\api\LogonController.cs" />
     <Compile Include="Controllers\api\RegisterController.cs" />
     <Compile Include="Controllers\api\TimeController.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="DBModel\AccountDBModelExt.cs" />
+    <Compile Include="DBModel\GameServerDBModelExt.cs" />
     <Compile Include="DBModel\Generate\AccountDBModel.cs" />
     <Compile Include="DBModel\Generate\GameServerDBModel.cs" />
     <Compile Include="Entity\Generate\AccountEntity.cs" />
     <Compile Include="Entity\Generate\GameServerEntity.cs" />
+    <Compile Include="Entity\RetGameServerEntity.cs" />
+    <Compile Include="Entity\RetGameServerPageEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
