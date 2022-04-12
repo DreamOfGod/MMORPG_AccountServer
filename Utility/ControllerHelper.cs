@@ -9,12 +9,12 @@ using System.Web;
 
 namespace MMORPG_AccountServer
 {
-    public class ControllerHelp
+    public class ControllerHelper
     {
         public static bool CheckSign(string deviceIdentifier, string timeStr, string sign) 
         {
             long time = long.Parse(timeStr);
-            if (Math.Abs(MFDSAUtil.GetTimestamp() - time) > 3)
+            if (Math.Abs(TimeHelper.NowTimestamp - time) > 3000)
             {
                 return false;
             }

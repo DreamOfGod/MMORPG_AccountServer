@@ -3,19 +3,14 @@ using Mmcoy.Framework.AbstractBase;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 public partial class AccountDBModel
 {
-    public MFReturnValue<int> Register(string username, string pwd, short channelId, string deviceIdentifier, string deviceModel)
+    public AccountEntity Register(string username, string pwd, short channelId, string deviceIdentifier, string deviceModel)
     {
-        MFReturnValue<int> retValue = new MFReturnValue<int>();
-
         using (SqlConnection conn = new SqlConnection(DBConn.MMORPG_Account))
         {
             conn.Open();
-            //开始事务
             SqlTransaction trans = conn.BeginTransaction();
             List<AccountEntity> lst = GetListWithTran(TableName, "Id", string.Format("Username='{0}'", username), trans: trans, isAutoStatus: false);
             if(lst == null || lst.Count == 0)
@@ -34,25 +29,21 @@ public partial class AccountDBModel
                 MFReturnValue<object> result = Create(entity);
                 if(result.HasError)
                 {
-                    retValue.HasError = true;
-                    retValue.Message = result.Message;
                     trans.Rollback();
-                    
+                    return null;
                 }
                 else
                 {
-                    retValue.Value = (int)result.OutputValues["Id"];
                     trans.Commit();
+                    entity.Id = (int)result.OutputValues["Id"];
+                    return entity;
                 }
             }
             else
             {
-                retValue.HasError = true;
-                retValue.Message = "用户名已经存在";
+                return null;
             }
         }
-
-        return retValue;
     }
 
     public AccountEntity Logon(string username, string pwd, string deviceIdentifier, string deviceModel)

@@ -94,11 +94,12 @@
     <Compile Include="CacheModel\GameServerCacheModelExt.cs" />
     <Compile Include="CacheModel\Generate\AccountCacheModel.cs" />
     <Compile Include="CacheModel\Generate\GameServerCacheModel.cs" />
-    <Compile Include="ControllerHelp.cs" />
-    <Compile Include="Controllers\api\GameServerController.cs" />
-    <Compile Include="Controllers\api\LogonController.cs" />
-    <Compile Include="Controllers\api\RegisterController.cs" />
-    <Compile Include="Controllers\api\TimeController.cs" />
+    <Compile Include="ResponseValue.cs" />
+    <Compile Include="Utility\ControllerHelper.cs" />
+    <Compile Include="Controllers\GameServerController.cs" />
+    <Compile Include="Controllers\LogonController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="DBModel\AccountDBModelExt.cs" />
     <Compile Include="DBModel\GameServerDBModelExt.cs" />
@@ -112,6 +113,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\TimeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

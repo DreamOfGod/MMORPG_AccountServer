@@ -6,7 +6,7 @@ using System.Web;
 
 public partial class AccountCacheModel
 {
-    public MFReturnValue<int> Register(string username, string pwd, short channelId, string deviceIdentifier, string deviceModel)
+    public AccountEntity Register(string username, string pwd, short channelId, string deviceIdentifier, string deviceModel)
     {
         return DBModel.Register(username, pwd, channelId, deviceIdentifier, deviceModel);
     }
