@@ -7,37 +7,24 @@ namespace MMORPG_AccountServer.Controllers
     [Route("game_server")]
     public class GameServerController : ApiController
     {
-        public enum GameServerPageCodeType
+        public ResponseValue<List<RetGameServerPageEntity>> Get()
         {
-            Success,
-
-        }
-
-        public ResponseValue<GameServerPageCodeType, List<RetGameServerPageEntity>> Get()
-        {
-            var responseValue = new ResponseValue<GameServerPageCodeType, List<RetGameServerPageEntity>>();
-            responseValue.Code = GameServerPageCodeType.Success;
-            responseValue.Value = GameServerCacheModel.Instance.GetGameServerPageList();
+            List<RetGameServerPageEntity> list = GameServerCacheModel.Instance.GetGameServerPageList();
+            var responseValue = new ResponseValue<List<RetGameServerPageEntity>>(0, list, null);
             return responseValue;
         }
 
-        public enum GameServerCodeType
+        public ResponseValue<List<RetGameServerEntity>> Get(int pageIndex)
         {
-            Success,
-            WrongPageIndex
-        }
-
-        public ResponseValue<GameServerCodeType, List<RetGameServerEntity>> Get(int pageIndex)
-        {
-            var responseValue = new ResponseValue<GameServerCodeType, List<RetGameServerEntity>>();
+            var responseValue = new ResponseValue<List<RetGameServerEntity>>();
             List<RetGameServerEntity> retGameServerList = GameServerCacheModel.Instance.GetGameServerList(pageIndex);
             if(retGameServerList == null)
             {
-                responseValue.Code = GameServerCodeType.WrongPageIndex;
+                responseValue.Code = 1;
             }
             else
             {
-                responseValue.Code = GameServerCodeType.Success;
+                responseValue.Code = 0;
                 responseValue.Value = retGameServerList;
             }
             return responseValue;
