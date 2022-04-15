@@ -10,10 +10,10 @@ namespace MMORPG_AccountServer.Controllers
         /// 返回当前时间戳，单位ms
         /// </summary>
         /// <returns></returns>
-        public ResponseValue<long> Get()
+        public ResponseData<long> Get()
         {
-            var responseValue = new ResponseValue<long>(0, TimeHelper.NowTimestamp, null);
-            return responseValue;
+            var responseData = new ResponseData<long>(0, TimeHelper.NowTimestamp, null);
+            return responseData;
         }
     }
 }

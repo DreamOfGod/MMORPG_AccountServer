@@ -16,9 +16,9 @@ namespace MMORPG_AccountServer.Controllers
             Success, DuplicateUsername, BadRequest
         }
 
-        public ResponseValue<AccountEntity> Post()
+        public ResponseData<AccountEntity> Post()
         {
-            var responseVal = new ResponseValue<AccountEntity>();
+            var responseData = new ResponseData<AccountEntity>();
 
             HttpRequest request = HttpContext.Current.Request;
             string deviceIdentifier = request["DeviceIdentifier"];
@@ -26,9 +26,9 @@ namespace MMORPG_AccountServer.Controllers
             string sign = request["Sign"]; 
             if (!ControllerHelper.CheckSign(deviceIdentifier, time, sign))
             {
-                responseVal.Code = 2;
-                responseVal.Error = "请求错误";
-                return responseVal;
+                responseData.Code = 2;
+                responseData.Error = "请求错误";
+                return responseData;
             }
 
             string username = request["Username"];
@@ -38,16 +38,16 @@ namespace MMORPG_AccountServer.Controllers
             AccountEntity entity = AccountCacheModel.Instance.Register(username, pwd, channelId, deviceIdentifier, deviceModel);
             if(entity != null)
             {
-                responseVal.Code = 0;
-                responseVal.Value = entity;
+                responseData.Code = 0;
+                responseData.Data = entity;
             }
             else
             {
-                responseVal.Code = 1;
-                responseVal.Error = "用户名重复";
+                responseData.Code = 1;
+                responseData.Error = "用户名重复";
             }
 
-            return responseVal;
+            return responseData;
         }
     }
 }

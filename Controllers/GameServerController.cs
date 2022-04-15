@@ -7,27 +7,27 @@ namespace MMORPG_AccountServer.Controllers
     [Route("game_server")]
     public class GameServerController : ApiController
     {
-        public ResponseValue<List<RetGameServerPageEntity>> Get()
+        public ResponseData<List<RetGameServerPageEntity>> Get()
         {
             List<RetGameServerPageEntity> list = GameServerCacheModel.Instance.GetGameServerPageList();
-            var responseValue = new ResponseValue<List<RetGameServerPageEntity>>(0, list, null);
-            return responseValue;
+            var responseData = new ResponseData<List<RetGameServerPageEntity>>(0, list, null);
+            return responseData;
         }
 
-        public ResponseValue<List<RetGameServerEntity>> Get(int pageIndex)
+        public ResponseData<List<RetGameServerEntity>> Get(int pageIndex)
         {
-            var responseValue = new ResponseValue<List<RetGameServerEntity>>();
+            var responseData = new ResponseData<List<RetGameServerEntity>>();
             List<RetGameServerEntity> retGameServerList = GameServerCacheModel.Instance.GetGameServerList(pageIndex);
             if(retGameServerList == null)
             {
-                responseValue.Code = 1;
+                responseData.Code = 1;
             }
             else
             {
-                responseValue.Code = 0;
-                responseValue.Value = retGameServerList;
+                responseData.Code = 0;
+                responseData.Data = retGameServerList;
             }
-            return responseValue;
+            return responseData;
         }
     }
 }

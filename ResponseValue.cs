@@ -3,17 +3,26 @@
     /// <summary>
     /// 控制器返回值
     /// </summary>
-    /// <typeparam name="ValueType"></typeparam>
-    public class ResponseValue<ValueType>
+    /// <typeparam name="DataType">数据的类型</typeparam>
+    public struct ResponseData<DataType>
     {
+        /// <summary>
+        /// 编号
+        /// </summary>
         public int Code;
-        public ValueType Value;
+        /// <summary>
+        /// 数据
+        /// </summary>
+        public DataType Data;
+        /// <summary>
+        /// 错误信息
+        /// </summary>
         public string Error;
-        public ResponseValue() { }
-        public ResponseValue(int code, ValueType value, string error) 
+
+        public ResponseData(int code, DataType data, string error)
         {
             Code = code;
-            Value = value;
+            Data = data;
             Error = error;
         }
     }

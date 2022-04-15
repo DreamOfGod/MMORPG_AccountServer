@@ -9,9 +9,9 @@ namespace MMORPG_AccountServer.Controllers
     [Route("logon")]
     public class LogonController : ApiController
     {
-        public ResponseValue<AccountEntity> Post()
+        public ResponseData<AccountEntity> Post()
         {
-            var responseValue = new ResponseValue<AccountEntity>();
+            var responseData = new ResponseData<AccountEntity>();
 
             var request = HttpContext.Current.Request;
             string deviceIdentifier = request["DeviceIdentifier"]; 
@@ -19,9 +19,9 @@ namespace MMORPG_AccountServer.Controllers
             string sign = request["Sign"]; 
             if (!ControllerHelper.CheckSign(deviceIdentifier, time, sign))
             {
-                responseValue.Code = 2;
-                responseValue.Error = "请求错误";
-                return responseValue;
+                responseData.Code = 2;
+                responseData.Error = "请求错误";
+                return responseData;
             }
 
             string username = request["Username"]; 
@@ -31,17 +31,16 @@ namespace MMORPG_AccountServer.Controllers
             
             if (entity == null)
             {
-                responseValue.Code = 1;
-                responseValue.Error = "用户名或密码错误";
-                
+                responseData.Code = 1;
+                responseData.Error = "用户名或密码错误";
             }
             else
             {
-                responseValue.Code = 0;
-                responseValue.Value = entity;
+                responseData.Code = 0;
+                responseData.Data = entity;
             }
 
-            return responseValue;
+            return responseData;
         }
     }
 }
