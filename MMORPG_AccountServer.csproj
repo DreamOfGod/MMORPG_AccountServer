@@ -94,6 +94,8 @@
     <Compile Include="CacheModel\GameServerCacheModelExt.cs" />
     <Compile Include="CacheModel\Generate\AccountCacheModel.cs" />
     <Compile Include="CacheModel\Generate\GameServerCacheModel.cs" />
+    <Compile Include="Bean\GameServer\GameServerBean.cs" />
+    <Compile Include="Bean\GameServer\GameServerGroupBean.cs" />
     <Compile Include="ResponseValue.cs" />
     <Compile Include="Utility\ControllerHelper.cs" />
     <Compile Include="Controllers\GameServerController.cs" />
@@ -101,14 +103,12 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="DBConn.cs" />
-    <Compile Include="DBModel\AccountDBModelExt.cs" />
-    <Compile Include="DBModel\GameServerDBModelExt.cs" />
+    <Compile Include="DBModel\Logon\AccountDBModelExt.cs" />
+    <Compile Include="DBModel\GameServer\GameServerDBModelExt.cs" />
     <Compile Include="DBModel\Generate\AccountDBModel.cs" />
     <Compile Include="DBModel\Generate\GameServerDBModel.cs" />
     <Compile Include="Entity\Generate\AccountEntity.cs" />
     <Compile Include="Entity\Generate\GameServerEntity.cs" />
-    <Compile Include="Entity\RetGameServerEntity.cs" />
-    <Compile Include="Entity\RetGameServerPageEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Bean\Logon\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

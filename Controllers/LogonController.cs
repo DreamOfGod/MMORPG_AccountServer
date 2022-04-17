@@ -1,6 +1,5 @@
-﻿using LitJson;
-using Mmcoy.Framework;
-using System;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -9,9 +8,9 @@ namespace MMORPG_AccountServer.Controllers
     [Route("logon")]
     public class LogonController : ApiController
     {
-        public ResponseData<AccountEntity> Post()
+        public async Task<ResponseData<int>> Post()
         {
-            var responseData = new ResponseData<AccountEntity>();
+            var responseData = new ResponseData<int>();
 
             var request = HttpContext.Current.Request;
             string deviceIdentifier = request["DeviceIdentifier"]; 
@@ -26,18 +25,27 @@ namespace MMORPG_AccountServer.Controllers
 
             string username = request["Username"]; 
             string pwd = request["Pwd"]; 
-            string deviceModel = request["DeviceModel"]; 
-            AccountEntity entity = AccountCacheModel.Instance.Logon(username, pwd, deviceIdentifier, deviceModel);
-            
-            if (entity == null)
+            string deviceModel = request["DeviceModel"];
+
+            try
             {
-                responseData.Code = 1;
-                responseData.Error = "用户名或密码错误";
+                int id = await AccountCacheModel.Instance.Logon(username, pwd, deviceIdentifier, deviceModel);
+
+                if (id >= 0)
+                {
+                    responseData.Code = 0;
+                    responseData.Data = id;
+                }
+                else
+                {
+                    responseData.Code = 1;
+                    responseData.Error = "用户名或密码错误";
+                }
             }
-            else
+            catch(Exception ex)
             {
-                responseData.Code = 0;
-                responseData.Data = entity;
+                responseData.Code = 3;
+                responseData.Error = ex.Message;
             }
 
             return responseData;

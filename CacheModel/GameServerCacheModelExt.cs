@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using MMORPG_AccountServer.Bean.GameServer;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public partial class GameServerCacheModel
 {
-    public List<RetGameServerPageEntity> GetGameServerPageList()
+    public async Task<List<GameServerGroupBean>> GetGameServerGroupList()
     {
-        return DBModel.GetGameServerPageList();
+        return await DBModel.GetGameServerGroupList();
     }
 
-    public List<RetGameServerEntity> GetGameServerList(int pageIndex)
+    public async Task<List<GameServerBean>> GetGameServerList(int firstId, int lastId)
     {
-        return DBModel.GetGameServerList(pageIndex);
+        return await DBModel.GetGameServerList(firstId, lastId);
+    }
+
+    public async Task<List<GameServerBean>> GetRecommendGameServerList()
+    {
+        return await DBModel.GetRecommendGameServerList();
     }
 }
