@@ -1,4 +1,5 @@
 ﻿using Mmcoy.Framework;
+using MMORPG_AccountServer.Bean.Logon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ public partial class AccountCacheModel
         return await DBModel.Register(username, pwd, channelId, deviceIdentifier, deviceModel);
     }
 
-    public async Task<int> Logon(string username, string pwd, string deviceIdentifier, string deviceModel)
+    public async Task<AccountBean> Logon(string username, string pwd, string deviceIdentifier, string deviceModel)
     {
         return await DBModel.Logon(username, pwd, deviceIdentifier, deviceModel);
     }

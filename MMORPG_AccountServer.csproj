@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bean\Logon\AccountBean.cs" />
     <Compile Include="CacheModel\AccountCacheModelExt.cs" />
     <Compile Include="CacheModel\GameServerCacheModelExt.cs" />
     <Compile Include="CacheModel\Generate\AccountCacheModel.cs" />
@@ -97,10 +98,10 @@
     <Compile Include="Bean\GameServer\GameServerBean.cs" />
     <Compile Include="Bean\GameServer\GameServerGroupBean.cs" />
     <Compile Include="ResponseValue.cs" />
+    <Compile Include="SessionKey.cs" />
     <Compile Include="Utility\ControllerHelper.cs" />
     <Compile Include="Controllers\GameServerController.cs" />
     <Compile Include="Controllers\LogonController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\TimeController.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="DBModel\Logon\AccountDBModelExt.cs" />
@@ -130,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Bean\Logon\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

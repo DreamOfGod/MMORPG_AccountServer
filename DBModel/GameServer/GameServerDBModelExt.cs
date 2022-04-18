@@ -1,5 +1,6 @@
 ﻿using Mmcoy.Framework.AbstractBase;
 using MMORPG_AccountServer.Bean.GameServer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -82,5 +83,17 @@ public partial class GameServerDBModel
     {
         string sql = $"select top(3) Id, RunStatus, IsCommand, IsNew, Name, Ip, Port from GameServer where Status = { (byte)EnumEntityStatus.Released } order by Id desc";
         return await GetGameServerList(sql);
+    }
+
+    public async Task<bool> EnterGameServer(int accountId, int gameServerId)
+    {
+        string sql = $"update Account set LastLogonServerId = { gameServerId }, UpdateTime = '{ DateTime.Now }' where Id = { accountId }";
+        using(var conn = new SqlConnection(DBConn.MMORPG_Account))
+        {
+            await conn.OpenAsync();
+            var command = new SqlCommand(sql, conn);
+            int count = await command.ExecuteNonQueryAsync();
+            return count == 1;
+        }
     }
 }

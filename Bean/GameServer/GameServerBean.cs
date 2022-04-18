@@ -13,7 +13,7 @@
         /// <summary>
         /// 区服状态
         /// </summary>
-        public int RunStatus;
+        public byte RunStatus;
 
         /// <summary>
         /// 是否推荐

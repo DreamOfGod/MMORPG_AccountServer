@@ -18,4 +18,9 @@ public partial class GameServerCacheModel
     {
         return await DBModel.GetRecommendGameServerList();
     }
+
+    public async Task<bool> EnterGameServer(int accountId, int gameServerId)
+    {
+        return await DBModel.EnterGameServer(accountId, gameServerId);
+    }
 }
