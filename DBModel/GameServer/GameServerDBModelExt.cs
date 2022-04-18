@@ -87,12 +87,13 @@ public partial class GameServerDBModel
 
     public async Task<bool> EnterGameServer(int accountId, int gameServerId)
     {
+        //Account.LastLogonServerId具有与GameServer.Id的外键约束
         string sql = $"update Account set LastLogonServerId = { gameServerId }, UpdateTime = '{ DateTime.Now }' where Id = { accountId }";
         using(var conn = new SqlConnection(DBConn.MMORPG_Account))
         {
             await conn.OpenAsync();
             var command = new SqlCommand(sql, conn);
-            int count = await command.ExecuteNonQueryAsync();
+            int count = await command.ExecuteNonQueryAsync();//gameServerId在GameServer.Id列中不存在时将引发异常
             return count == 1;
         }
     }
